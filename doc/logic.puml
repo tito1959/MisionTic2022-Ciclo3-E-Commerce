@@ -1,0 +1,41 @@
+@startuml
+
+class Products {
+
+    - Long id;
+    - String name;
+    - String urlImg;
+    - int stock;
+    - double price;
+
+    + set()
+    + get()
+}
+
+class Users {
+
+    - Long id;
+    - String firstName;
+    - String lastName;
+    - String urlImg;
+    - String phone;
+    - String email;
+    - int balance;
+
+    + set()
+    + get()
+}
+
+class Categories {
+
+    - Long id;
+    - String name;
+
+    + set()
+    + get()
+}
+
+ Products "*" o-- "*" Categories
+ Users "*" o-- "*" Products
+
+@enduml

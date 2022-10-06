@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
 import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
 import co.edu.misiontic.sebas.commerce.model.dto.UserDto;
 
@@ -88,7 +89,30 @@ public class CommerceController {
     /*
      * ==================
      * Category Operations
-     * =================?
+     * ==================
      */
 
+    // read all categories
+    @GetMapping("/categories")
+    public ResponseEntity<List<CategoryDto>> getMethodName() {
+        return null;
+    }
+
+    // create category
+    @PostMapping("/categories")
+    public ResponseEntity<String> createCategory(@RequestBody CategoryDto category) {
+        return null;
+    }
+
+    // edit category
+    @PutMapping("/categories/{id}")
+    public ResponseEntity<String> editCategory(@RequestBody CategoryDto category) {
+        return null;
+    };
+
+    // delete category
+    @DeleteMapping("/categories/{id}")
+    public ResponseEntity<String> deleteCategory(@RequestBody CategoryDto category) {
+        return null;
+    }
 }

@@ -1,22 +1,17 @@
 package co.edu.misiontic.sebas.commerce.model.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class ProductDto {
+@AllArgsConstructor
+public class ProductSlimDto {
 
     private Long id;
     private String name;
     private String urlImg;
     private String stock;
     private double price;
-
-    private List<CategoryDto> categories = new ArrayList<>();
 }

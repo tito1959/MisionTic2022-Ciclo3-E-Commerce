@@ -22,5 +22,18 @@ public class UserDto {
     private String password;
     private double balance;
 
+    public UserDto(Long id, boolean admin, String firstName, String lastName, String urlImg, String phone, String email,
+            String password, double balance) {
+        this.id = id;
+        this.admin = admin;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.urlImg = urlImg;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.balance = balance;
+    }
+
     private List<ProductDto> products = new ArrayList<>();
 }

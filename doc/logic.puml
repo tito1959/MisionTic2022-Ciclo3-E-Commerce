@@ -15,14 +15,12 @@ class Products {
 class Users {
 
     - Long id;
-    - boolean admin;
     - String firstName;
     - String lastName;
     - String urlImg;
     - String phone;
     - String email;
     - int balance;
-    - String password;
 
     + set()
     + get()

@@ -7,6 +7,26 @@ import co.edu.misiontic.sebas.commerce.service.CategoryService;
 
 public class CategoryServiceImp implements CategoryService {
 
+<<<<<<< HEAD
+=======
+    /*
+     * =================
+     * Repository Injection.
+     * ================
+     */
+    @Autowired
+    private final CategoryRepository categoryRepository;
+
+    @Autowired
+    CategoryMapper categoryMapper;
+
+    /*
+     * ===============
+     * SERVICES
+     * =============
+     */
+
+>>>>>>> dev
     @Override
     public List<CategoryDto> getCategories() {
         return null;

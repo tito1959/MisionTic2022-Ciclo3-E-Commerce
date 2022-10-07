@@ -2,6 +2,7 @@ package co.edu.misiontic.sebas.commerce.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
 import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
 import co.edu.misiontic.sebas.commerce.model.dto.UserDto;
+import co.edu.misiontic.sebas.commerce.service.CategoryService;
 
 @RestController
 @RequestMapping("/api")
@@ -25,6 +27,21 @@ public class CommerceController {
      * POST: create
      * PUT: update
      * DELETE: delete
+     */
+
+    /*
+     * ===============
+     * DEPENDENCIES
+     * ===============
+     */
+
+    @Autowired
+    private CategoryService categoryService;
+
+    /*
+     * ==============
+     * ENDPOINTS
+     * =============
      */
 
     // read all products
@@ -84,7 +101,8 @@ public class CommerceController {
     // read all categories
     @GetMapping("/categories")
     public ResponseEntity<List<CategoryDto>> getMethodName() {
-        return null;
+        var categories = categoryService.getCategories();
+        return ResponseEntity.ok(categories);
     }
 
     // create category

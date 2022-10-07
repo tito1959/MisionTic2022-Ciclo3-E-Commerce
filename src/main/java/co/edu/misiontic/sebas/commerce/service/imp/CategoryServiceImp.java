@@ -18,7 +18,7 @@ public class CategoryServiceImp implements CategoryService {
 
     /*
      * =================
-     * Repository Injection
+     * Repository Injection.
      * ================
      */
     @Autowired

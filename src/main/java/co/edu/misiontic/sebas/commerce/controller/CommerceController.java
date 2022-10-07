@@ -62,7 +62,7 @@ public class CommerceController {
 
     // edit product
     @PutMapping("/products/{id}")
-    public ResponseEntity<String> editProduct(@PathVariable String id) {
+    public ResponseEntity<String> editProduct(@PathVariable String id, @RequestBody ProductDto product) {
         return null;
     }
 

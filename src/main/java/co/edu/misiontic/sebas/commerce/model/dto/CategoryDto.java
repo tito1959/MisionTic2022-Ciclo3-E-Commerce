@@ -15,10 +15,5 @@ public class CategoryDto {
     private Long id;
     private String name;
 
-    public CategoryDto(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    private List<ProductSlimDto> products = new ArrayList<>();
+    private List<ProductDto> products = new ArrayList<>();
 }

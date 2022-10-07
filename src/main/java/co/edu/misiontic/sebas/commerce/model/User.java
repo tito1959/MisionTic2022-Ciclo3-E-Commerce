@@ -1,6 +1,8 @@
 package co.edu.misiontic.sebas.commerce.model;
 
-import javax.persistence.Column;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,9 +21,9 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private boolean admin;
     private String firstName;
     private String lastName;
     private String urlImg;
@@ -29,6 +31,7 @@ public class User {
     private String email;
     private String password;
     private double balance;
-    private boolean admin;
+
+    private List<Product> products = new ArrayList<>();
 
 }

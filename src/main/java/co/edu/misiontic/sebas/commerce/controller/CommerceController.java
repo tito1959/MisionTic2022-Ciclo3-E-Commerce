@@ -45,7 +45,7 @@ public class CommerceController {
 
     /*
      * ==============
-     * ENDPOINTS
+     * PRODUCTS
      * =============
      */
 

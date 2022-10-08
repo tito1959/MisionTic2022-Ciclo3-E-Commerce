@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
 import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
 import co.edu.misiontic.sebas.commerce.model.dto.UserDto;
+import co.edu.misiontic.sebas.commerce.model.dto.UserSlimDto;
 import co.edu.misiontic.sebas.commerce.service.CategoryService;
+import co.edu.misiontic.sebas.commerce.service.ProductService;
+import co.edu.misiontic.sebas.commerce.service.SecurityService;
 
 @RestController
 @RequestMapping("/api")
@@ -43,6 +46,12 @@ public class CommerceController {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private SecurityService securityService;
+
     /*
      * ==============
      * PRODUCTS
@@ -52,7 +61,7 @@ public class CommerceController {
     // read all products
     @GetMapping("/products")
     public ResponseEntity<List<ProductDto>> getProductsWithTags() {
-        return null;
+        return ResponseEntity.ok(productService.getAllProducts());
     }
 
     // read product by id
@@ -87,8 +96,8 @@ public class CommerceController {
 
     // read all users
     @GetMapping("/user")
-    public ResponseEntity<List<UserDto>> getAllUsers() {
-        return null;
+    public ResponseEntity<List<UserSlimDto>> getAllUsers() {
+        return ResponseEntity.ok(securityService.getUsers());
     }
 
     // read user by id

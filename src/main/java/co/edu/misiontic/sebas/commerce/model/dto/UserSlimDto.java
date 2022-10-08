@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class UserSlimDto {
 
     private Long id;
     private boolean admin;
@@ -16,7 +16,5 @@ public class UserDto {
     private String urlImg;
     private String phone;
     private String email;
-    private String password;
     private double balance;
-
 }

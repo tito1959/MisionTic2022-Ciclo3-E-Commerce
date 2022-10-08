@@ -18,5 +18,5 @@ public class ProductDto {
     private String stock;
     private double price;
 
-    private List<CategoryDto> categories = new ArrayList<>();
+    private List<CategorySlimDto> categories = new ArrayList<>();
 }

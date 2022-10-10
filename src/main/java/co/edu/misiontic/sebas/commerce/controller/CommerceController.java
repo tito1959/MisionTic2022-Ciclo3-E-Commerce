@@ -15,9 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.misiontic.sebas.commerce.model.Product;
 import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
+import co.edu.misiontic.sebas.commerce.model.dto.CategorySlimDto;
 import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
+import co.edu.misiontic.sebas.commerce.model.dto.ProductSlimDto;
 import co.edu.misiontic.sebas.commerce.model.dto.UserDto;
+import co.edu.misiontic.sebas.commerce.model.dto.UserSlimDto;
 import co.edu.misiontic.sebas.commerce.service.CategoryService;
+import co.edu.misiontic.sebas.commerce.service.ProductService;
+import co.edu.misiontic.sebas.commerce.service.SecurityService;
 
 @RestController
 @RequestMapping("/api")
@@ -42,15 +47,27 @@ public class CommerceController {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private SecurityService securityService;
+
     /*
      * ==============
-     * ENDPOINTS
+     * PRODUCTS
      * =============
      */
 
     // read all products
     @GetMapping("/products")
-    public List<Product> getProducts() {
+    public ResponseEntity<List<ProductSlimDto>> getProductsWithTags() {
+        return ResponseEntity.ok(productService.getAllProducts());
+    }
+
+    // read product by id
+    @GetMapping("/products/{id}")
+    public ResponseEntity<ProductDto> getPorudct(@PathVariable String id) {
         return null;
     }
 
@@ -80,8 +97,8 @@ public class CommerceController {
 
     // read all users
     @GetMapping("/user")
-    public ResponseEntity<List<UserDto>> getAllUsers() {
-        return null;
+    public ResponseEntity<List<UserSlimDto>> getAllUsers() {
+        return ResponseEntity.ok(securityService.getUsers());
     }
 
     // read user by id
@@ -104,7 +121,7 @@ public class CommerceController {
 
     // read all categories
     @GetMapping("/categories")
-    public ResponseEntity<List<CategoryDto>> getMethodName() {
+    public ResponseEntity<List<CategorySlimDto>> getMethodName() {
         var categories = categoryService.getCategories();
         return ResponseEntity.ok(categories);
     }

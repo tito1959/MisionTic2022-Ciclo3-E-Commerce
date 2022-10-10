@@ -1,8 +1,5 @@
 package co.edu.misiontic.sebas.commerce.model.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoryDto {
+public class CategorySlimDto {
 
     private Long id;
     private String name;
 
-    private List<ProductSlimDto> products = new ArrayList<>();
 }

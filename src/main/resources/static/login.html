@@ -6,10 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" href="/svg/LogoHome.svg" type="image/x-icon">
     <title>Login</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+
 </head>
 
-<body>
+<body class="text-center">
+
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center p-4 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none gap-2">
+                <img src="/svg/market_logo.svg" width="40px" height="40px" alt="">
+                <span class="fs-4">E-Market</span>
+            </a>
+
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="nav-h me-3 py-2 text-decoration-none" href="index.html">Inicio</a>
+                <a class="nav-h me-3 py-2 text-decoration-none" href="products.html">Productos</a>
+                <a class="nav-h me-3 py-2 text-decoration-none" href="about.html">Quienes somos?</a>
+                <a class="nav-h me-3 py-2 text-decoration-none" href="cart.html">Mi Carrito</a>
+                <a class="nav-h me-3 py-2 text-decoration-none btn btn-outline-dark active" href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="form-signin w-100 m-auto">
+        <form>
+            <img class="mb-4" src="/svg/market_logo.svg" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">© 2022</p>
+        </form>
+    </main>
 
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>

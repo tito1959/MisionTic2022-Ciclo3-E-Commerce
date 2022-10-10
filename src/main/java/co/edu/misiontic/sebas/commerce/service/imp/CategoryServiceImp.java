@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
+import co.edu.misiontic.sebas.commerce.model.dto.CategorySlimDto;
 import co.edu.misiontic.sebas.commerce.model.mapper.CategoryMapper;
 import co.edu.misiontic.sebas.commerce.repository.CategoryRepository;
 import co.edu.misiontic.sebas.commerce.service.CategoryService;
@@ -30,11 +31,11 @@ public class CategoryServiceImp implements CategoryService {
     /*
      * ===============
      * SERVICES
-     * =============
+     * ===============
      */
 
     @Override
-    public List<CategoryDto> getCategories() {
+    public List<CategorySlimDto> getCategories() {
         var categoryOp = categoryRepository.findAll(Sort.by("name"));
         return categoryMapper.categoryToCategoryDto(categoryOp);
     }

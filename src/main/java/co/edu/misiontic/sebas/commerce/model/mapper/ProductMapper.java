@@ -5,10 +5,10 @@ import java.util.List;
 import org.mapstruct.Mapper;
 
 import co.edu.misiontic.sebas.commerce.model.Product;
-import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
+import co.edu.misiontic.sebas.commerce.model.dto.ProductSlimDto;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
 
-    List<ProductDto> productToProductDto(List<Product> products);
+    List<ProductSlimDto> productToProductDto(List<Product> products);
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
+import co.edu.misiontic.sebas.commerce.model.dto.ProductSlimDto;
 import co.edu.misiontic.sebas.commerce.model.mapper.ProductMapper;
 import co.edu.misiontic.sebas.commerce.repository.ProductRepository;
 import co.edu.misiontic.sebas.commerce.service.ProductService;
@@ -20,7 +21,7 @@ public class ProductServiceImp implements ProductService {
     ProductMapper productMapper;
 
     @Override
-    public List<ProductDto> getAllProducts() {
+    public List<ProductSlimDto> getAllProducts() {
         return productMapper.productToProductDto(productRepository.findAll());
     }
 

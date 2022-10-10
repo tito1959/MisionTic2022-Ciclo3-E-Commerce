@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
+import co.edu.misiontic.sebas.commerce.model.dto.CategorySlimDto;
 import co.edu.misiontic.sebas.commerce.model.dto.ProductDto;
+import co.edu.misiontic.sebas.commerce.model.dto.ProductSlimDto;
 import co.edu.misiontic.sebas.commerce.model.dto.UserDto;
 import co.edu.misiontic.sebas.commerce.model.dto.UserSlimDto;
 import co.edu.misiontic.sebas.commerce.service.CategoryService;
@@ -60,7 +62,7 @@ public class CommerceController {
 
     // read all products
     @GetMapping("/products")
-    public ResponseEntity<List<ProductDto>> getProductsWithTags() {
+    public ResponseEntity<List<ProductSlimDto>> getProductsWithTags() {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 
@@ -120,7 +122,7 @@ public class CommerceController {
 
     // read all categories
     @GetMapping("/categories")
-    public ResponseEntity<List<CategoryDto>> getMethodName() {
+    public ResponseEntity<List<CategorySlimDto>> getMethodName() {
         var categories = categoryService.getCategories();
         return ResponseEntity.ok(categories);
     }

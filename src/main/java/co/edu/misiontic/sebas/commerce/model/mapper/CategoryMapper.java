@@ -5,10 +5,10 @@ import java.util.List;
 import org.mapstruct.Mapper;
 
 import co.edu.misiontic.sebas.commerce.model.Category;
-import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
+import co.edu.misiontic.sebas.commerce.model.dto.CategorySlimDto;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
 
-    List<CategoryDto> categoryToCategoryDto(List<Category> category);
+    List<CategorySlimDto> categoryToCategoryDto(List<Category> category);
 }

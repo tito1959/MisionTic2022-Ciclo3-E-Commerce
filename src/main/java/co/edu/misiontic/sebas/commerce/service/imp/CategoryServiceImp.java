@@ -3,10 +3,8 @@ package co.edu.misiontic.sebas.commerce.service.imp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import co.edu.misiontic.sebas.commerce.model.dto.CategoryDto;
 import co.edu.misiontic.sebas.commerce.model.dto.CategorySlimDto;
 import co.edu.misiontic.sebas.commerce.model.mapper.CategoryMapper;
 import co.edu.misiontic.sebas.commerce.repository.CategoryRepository;
@@ -17,42 +15,15 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CategoryServiceImp implements CategoryService {
 
-    /*
-     * =================
-     * Repository Injection
-     * ================
-     */
     @Autowired
     private final CategoryRepository categoryRepository;
 
     @Autowired
-    CategoryMapper categoryMapper;
-
-    /*
-     * ===============
-     * SERVICES
-     * ===============
-     */
+    private CategoryMapper categoryMapper;
 
     @Override
-    public List<CategorySlimDto> getCategories() {
-        var categoryOp = categoryRepository.findAll(Sort.by("name"));
-        return categoryMapper.categoryToCategoryDto(categoryOp);
-    }
-
-    @Override
-    public void saveCategory(CategoryDto category) {
-
-    }
-
-    @Override
-    public void updateCategory(CategoryDto category) {
-
-    }
-
-    @Override
-    public void deleteCategory(CategoryDto category) {
-
+    public List<CategorySlimDto> getAllCategories() {
+        return categoryMapper.categoriesToCategoriesSlimDto(categoryRepository.findAll());
     }
 
 }

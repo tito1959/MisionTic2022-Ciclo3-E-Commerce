@@ -10,5 +10,5 @@ import co.edu.misiontic.sebas.commerce.model.dto.CategorySlimDto;
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
 
-    List<CategorySlimDto> categoryToCategoryDto(List<Category> category);
+    List<CategorySlimDto> categoriesToCategoriesSlimDto(List<Category> categories);
 }

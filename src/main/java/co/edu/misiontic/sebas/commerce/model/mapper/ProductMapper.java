@@ -10,5 +10,5 @@ import co.edu.misiontic.sebas.commerce.model.dto.ProductSlimDto;
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
 
-    List<ProductSlimDto> productToProductDto(List<Product> products);
+    List<ProductSlimDto> productsToProductsSlimDto(List<Product> product);
 }

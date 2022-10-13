@@ -11,5 +11,4 @@ public class CategorySlimDto {
 
     private Long id;
     private String name;
-
 }

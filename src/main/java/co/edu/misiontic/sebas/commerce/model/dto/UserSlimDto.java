@@ -9,12 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserSlimDto {
 
-    private Long id;
-    private boolean admin;
-    private String firstName;
-    private String lastName;
-    private String urlImg;
-    private String phone;
     private String email;
-    private double balance;
+    private String password;
 }

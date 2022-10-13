@@ -22,7 +22,7 @@ public class SecurityServiceImp implements SecurityService {
 
     @Override
     public UserDto getUser(UserSlimDto user) {
-        return userMapper.userToUserDto(userRepository.findOne(user));
+        return userMapper.userToUserDto(userRepository.findByPasswordAndEmail(user.getEmail(), user.getPassword()));
     }
 
 }
